@@ -51,7 +51,7 @@ public:
 		IVP_U_Quat q_next_PSI;
 
 		q_core_f_core.set_fast_multiple_with_clip(&get_core()->rot_speed, deltaTime);
-		q_next_PSI.inline_set_mult_quat(&(IVP_U_Quat)this->get_core()->q_world_f_core_next_psi, &q_core_f_core);
+		q_next_PSI.inline_set_mult_quat(&get_core()->q_world_f_core_next_psi, &q_core_f_core);
 		q_next_PSI.fast_normize_quat();
 		q_next_PSI.set_matrix(&next_m_world_f_core);
 
