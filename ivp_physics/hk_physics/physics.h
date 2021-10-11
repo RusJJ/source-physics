@@ -230,7 +230,7 @@ public:
 	}
 };
 class hk_Limited_Ball_Socket_BP *ivp_create_limited_ball_socket_bp(IVP_Template_Constraint *tmpl );
-class hk_Constraintê *ivp_create_ragdoll_constraint_from_local_constraint_system(class hk_Local_Constraint_System *, IVP_Template_Constraint * );
+class hk_Constraint *ivp_create_ragdoll_constraint_from_local_constraint_system(class hk_Local_Constraint_System *, IVP_Template_Constraint * );
 
 
 #include <hk_physics/constraint/constraint.h>
