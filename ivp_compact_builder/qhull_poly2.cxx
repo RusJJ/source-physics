@@ -12,6 +12,7 @@
 */
 
 #include <ivp_physics.hxx>
+#include "hk_math/math.h"
 #include "qhull_a.hxx"
 
 /*======== functions in alphabetical order ==========*/
@@ -2047,7 +2048,7 @@ void qh_nearcoplanar ( void /* qh.facet_list */) {
   }else if (!qh KEEPcoplanar || !qh KEEPinside) {
     qh_outerinner (NULL, NULL, &innerplane);
     if (qh JOGGLEmax < REALmax/2)
-      innerplane -= qh JOGGLEmax * sqrt (qh hull_dim);
+      innerplane -= qh JOGGLEmax * hk_Math::sqrt (qh hull_dim);
     numpart= 0;
     FORALLfacets { 
       if (facet->coplanarset) {

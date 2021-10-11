@@ -1,11 +1,12 @@
 // Copyright (C) Ipion Software GmbH 1999-2000. All rights reserved.
-#ifdef IVP_WILLAMETTE
-#include <emmintrin.h>
-#endif
 
 // IVP_EXPORT_PRIVATE
 
 #include <ivp_physics.hxx>
+
+#ifdef IVP_WILLAMETTE
+	#include <emmintrin.h>
+#endif
 
 #if defined(LINUX) || defined(SUN) || (__MWERKS__ && __POWERPC__)
 #	include <alloca.h>

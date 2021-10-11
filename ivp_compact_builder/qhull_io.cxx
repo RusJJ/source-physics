@@ -17,6 +17,7 @@
 */
 
 #include <ivp_physics.hxx>
+#include "hk_math/math.h"
 #include "qhull_a.hxx"
 
 /*========= -prototypes for internal functions ========= */
@@ -814,7 +815,7 @@ void qh_geomplanes (facetT *facet, realT *outerplane, realT *innerplane) {
     qh_outerinner (facet, outerplane, innerplane);
     radius= qh PRINTradius;
     if (qh JOGGLEmax < REALmax/2)
-      radius -= qh JOGGLEmax * sqrt (qh hull_dim);  /* already accounted for in qh_outerinner() */
+      radius -= qh JOGGLEmax * hk_Math::sqrt (qh hull_dim);  /* already accounted for in qh_outerinner() */
     *outerplane += radius;
     *innerplane -= radius;
     if (qh PRINTcoplanar || qh PRINTspheres) {
@@ -1351,7 +1352,7 @@ void qh_printbegin (FILE *fp, int format, facetT *facetlist, setT *facets, boolT
     }
     maximize_(qh PRINTradius, qh MINvisible); 
     if (qh JOGGLEmax < REALmax/2)
-      qh PRINTradius += qh JOGGLEmax * sqrt (qh hull_dim);
+      qh PRINTradius += qh JOGGLEmax * hk_Math::sqrt (qh hull_dim);
     if (qh PRINTdim != 4 &&
 	(qh PRINTcoplanar || qh PRINTspheres || qh PRINTcentrums)) {
       vertices= qh_facetvertices (facetlist, facets, printall);
